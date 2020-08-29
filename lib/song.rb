@@ -4,7 +4,6 @@ class Song
 
     @@artists = []
     @@genres = []
-    @@genre_count = {}
     @@count = 0
 
     def initialize (name, artist, genre)
@@ -28,16 +27,6 @@ class Song
     def self.genres
         @@genres.uniq
     end
-
-    # def genre_hash
-    #     genre_count.each do |key, value|
-    #         if key == genre
-    #             value += 1
-    #         else 
-    #             genre_count[genre] = 1
-    #         end
-    #     end
-    # end
 
     def Song.genre_count
         @@genres.each_with_object(Hash.new(0)) {|element, hash| hash[element] += 1} 
